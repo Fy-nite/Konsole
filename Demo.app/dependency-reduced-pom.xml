@@ -47,8 +47,8 @@
           <archive>
             <manifestEntries>
               <MicrOS-App>true</MicrOS-App>
-              <App-ID>org.finite.texteditor</App-ID>
-              <Main-Class>org.finite.texteditor.TextEditorApp</Main-Class>
+              <App-ID>org.finite.Main</App-ID>
+              <Main-Class>org.finite.Main</Main-Class>
             </manifestEntries>
           </archive>
         </configuration>

@@ -4,4 +4,4 @@
 .project
 .settings/
 target/
-Resources/*
+Demo.app/Contents/Resources/*

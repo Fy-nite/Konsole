@@ -19,8 +19,13 @@ import org.Finite.MicrOS.apps.MicrOSApp;
 import org.Finite.MicrOS.core.CLIRegistry;
 import org.Finite.MicrOS.core.VirtualFileSystem;
 import org.Finite.MicrOS.ui.FontLoader;
+import org.Finite.MicrOS.util.AppLauncher;
+
+
 
 public class DemoApp extends MicrOSApp {
+
+    // use the isRunningInMicrOS() method to check if the app is running in MicrOS, and if not, run it in a JFrame
 
 
     int clicked = 0;

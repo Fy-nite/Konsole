@@ -20,7 +20,7 @@
             <groupId>org.Finite</groupId>
             <artifactId>MicrOS</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
+            <!-- Removing provided scope so it's included in the build -->
         </dependency>
         
         <!-- JSON Library -->
@@ -64,6 +64,16 @@
                         </goals>
                         <configuration>
                             <outputDirectory>Contents/Resources</outputDirectory>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <MicrOS-App>true</MicrOS-App>
+                                        <App-ID>org.finite.Main</App-ID>
+                                        <Main-Class>org.finite.Main</Main-Class>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
                         </configuration>
                     </execution>
                 </executions>
@@ -77,8 +87,8 @@
                     <archive>
                         <manifestEntries>
                             <MicrOS-App>true</MicrOS-App>
-                            <App-ID>org.finite.texteditor</App-ID>
-                            <Main-Class>org.finite.texteditor.TextEditorApp</Main-Class>
+                            <App-ID>org.finite.Main</App-ID>
+                            <Main-Class>org.finite.Main</Main-Class>
                         </manifestEntries>
                     </archive>
                 </configuration>
