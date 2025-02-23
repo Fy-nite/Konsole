@@ -1,9 +1,9 @@
 {
-    "name": "Demo App Template",
-    "identifier": "org.finite.DemoApp",
+    "name": "Konsole",
+    "identifier": "org.finite.Konsole.Konsole",
     "version": "1.0.0",
-    "mainClass": "org.finite.DemoApp",
-    "description": "A simple template app demonstrating basic MicrOS app development",
+    "mainClass": "org.finite.Konsole.Konsole",
+    "description": "Konsole is a simple terminal emulator for MicrOS.",
     "category": "Templates",
     "icon": "resources/icon.png",
     "authors": [

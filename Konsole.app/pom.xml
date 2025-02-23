@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.finite.micros.template</groupId>
-    <artifactId>demo-app</artifactId>
+    <groupId>org.finite.Konsole</groupId>
+    <artifactId>Konsole</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -69,7 +69,7 @@
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
                                         <MicrOS-App>true</MicrOS-App>
-                                        <App-ID>org.finite.Main</App-ID>
+                                        <App-ID>org.finite.Konsole</App-ID>
                                         <Main-Class>org.finite.Main</Main-Class>
                                     </manifestEntries>
                                 </transformer>
@@ -87,7 +87,7 @@
                     <archive>
                         <manifestEntries>
                             <MicrOS-App>true</MicrOS-App>
-                            <App-ID>org.finite.Main</App-ID>
+                            <App-ID>org.finite.Konsole</App-ID>
                             <Main-Class>org.finite.Main</Main-Class>
                         </manifestEntries>
                     </archive>
