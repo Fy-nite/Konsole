@@ -32,6 +32,7 @@ public class Konsole extends MicrOSApp {
     private String systemName = initSystemName();
     private Commands commands;
     private Commmon common;
+    private ThemeManager themeManager;
 
     private String initSystemName() {
         if (AppLauncher.isRunningInMicrOS()) {
@@ -79,6 +80,7 @@ public class Konsole extends MicrOSApp {
         commands = new Commands(this);
         updatePrompt();
         common = new Commmon(console, prompt, inputBuffer);
+        themeManager = new ThemeManager(this);
 
         console.addKeyListener(new KeyAdapter() {
             @Override
@@ -181,6 +183,17 @@ public class Konsole extends MicrOSApp {
             case "ls":
                 commands.listFiles(args);
                 break;
+            case "theme":
+                if (args.length == 0) {
+                    println("Current theme: " + themeManager.getCurrentTheme().getName());
+                } else if (args.length == 1 && args[0].equals("list")) {
+                    themeManager.listThemes();
+                } else if (args.length == 2 && args[0].equals("apply")) {
+                    themeManager.applyTheme(args[1]);
+                } else {
+                    println("Usage: theme [list|apply <theme-name>]");
+                }
+                break;
             default:
                 // Try executing as CLI app
                 if (!CLIRegistry.getInstance().executeCommand(cmd, args, getManifest().getIdentifier())) {
@@ -189,6 +202,14 @@ public class Konsole extends MicrOSApp {
         }
         updatePrompt();
         common.displayPrompt();
+    }
+
+    public void applyTheme(Theme theme) {
+        console.setBackground(theme.getBackgroundColor());
+        console.setForeground(theme.getForegroundColor());
+        console.setFont(theme.getFont());
+        font = theme.getFont();
+        // The prompt color change would require modifying the Common class to support colored text
     }
 
     public void println(String text) {

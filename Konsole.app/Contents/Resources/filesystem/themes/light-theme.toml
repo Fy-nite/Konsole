@@ -1,0 +1,13 @@
+[theme]
+name = "Light"
+description = "Light theme for Konsole"
+
+[colors]
+background = "#FFFFFF"
+foreground = "#000000"
+prompt = "#0000FF"
+
+[font]
+family = "JetBrainsMono"
+size = 19
+style = "PLAIN"
